@@ -1,15 +1,26 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Arrays;
 
+/**
+ * test
+ */
 public class test {
-    public void givenWritingStringToFile_whenUsingPrintWriter_thenCorrect() 
-    throws IOException {
-      FileWriter fileWriter = new FileWriter("result.txt");
-      PrintWriter printWriter = new PrintWriter(fileWriter);
-      printWriter.print("Some String");
-      printWriter.printf("Product name is %s and its price is %d $", "iPhone", 1000);
-      printWriter.close();
-  }
-    
+
+    public static void main(String[] args) {
+        int a = 2;
+        int b = -2;
+        double result = Math.pow(a, b);
+        System.out.println(result);
+
+
+        String[] arr = {"a", "2"};
+        if (arr[0] == "a") 
+        {
+        System.out.println("Да");    
+        }
+        else{
+        System.out.println("НЕТ");    
+        }
+        System.out.println(Arrays.toString(arr));
+
+    }
 }

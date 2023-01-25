@@ -30,37 +30,80 @@ public class lesson2 {
         String str1 = simpleArray[0];
         String[] arrtemp1 = str1.split(" = ");
         // for (String ss1 : arrtemp1) {
-            // System.out.println(ss1);
+        // System.out.println(ss1);
         // }
 
         String str2 = simpleArray[1];
         String[] arrtemp2 = str2.split(" = ");
         // for (String ss2 : arrtemp2) {
-            // System.out.println(ss2);
+        // System.out.println(ss2);
         // }
-        // System.out.println(Arrays.toString(arrtemp1));
+        System.out.println(Arrays.toString(arrtemp1));
         // System.out.println(Arrays.toString(arrtemp2));
-
 
         String a1 = null;
         String b1 = null;
 
-        for (int i = 0; i < arrtemp2.length; i++) {   
-            if (arrtemp1[0] == "a") {
-                a1 = arrtemp2[1];
-                b1 = arrtemp1[1];
-            } else {
-                a1 = arrtemp1[1];
-                b1 = arrtemp2[1];
-            }
-        }
-        double a = Double.parseDouble(a1);
-        double b = Double.parseDouble(b1);
+        // for (int i = 0; i < arrtemp1.length; i++) {
+        // if (arrtemp1[0] == "b") {
+        // a1 = arrtemp1[1];
+        // b1 = arrtemp2[1];
+        // }
+        // else {
+        // a1 = arrtemp1[1];
+        // b1 = arrtemp2[1];
+        // }
+        // }
 
-        // System.out.println(a1);
+
+        // for (int i = 0; i < arrtemp2.length; i++) {
+        //     System.out.println(arrtemp2[i]);
+        // }
+
+
+        // if (arrtemp1[0] == "a") {
+        //     System.out.println("a тута");
+        // }
+
+        System.out.println(arrtemp1[0]);
+        System.out.println(arrtemp1[1]);
+
+        boolean express = Arrays.asList(arrtemp1).contains("a");
+        System.out.println(express);
+
+        if (express == true){
+            a1 = arrtemp1[1];
+            b1 = arrtemp2[1];
+        } else{
+            b1 = arrtemp1[1];
+            a1 = arrtemp2[1];
+        }
+
+
+        System.out.println(Arrays.asList(arrtemp1).contains("a"));
+        // Arrays.asList(arrtemp1).contains("a");
+
+
+
+        // for (int i = 0; i < arrtemp1.length; i++) {
+        //     if (arrtemp1[0] == "a") {
+        //         System.out.println("a тута");
+        //     } else {
+        //         System.out.println("нет");
+        //     }
+        // }
+
+        // a1 = arrtemp1[1];
+        // b1 = arrtemp2[1];
+
+        System.out.println(a1);
         // System.out.println(b1);
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+
+        int a = Integer.parseInt(a1);
+        int b = Integer.parseInt(b1);
+
+        // System.out.println("a = " + a);
+        // System.out.println("b = " + b);
 
         System.out.println(a + " в степени " + b + " равен - " + calc(a, b));
         double c = calc(a, b);
@@ -75,7 +118,7 @@ public class lesson2 {
         }
     }
 
-    public static double calc(Double a, Double b) {
+    public static double calc(int a, int b) {
         double result = Math.pow(a, b);
         return result;
 
