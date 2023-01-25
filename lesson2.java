@@ -14,7 +14,11 @@ public class lesson2 {
     public static void main(String[] args) throws IOException {
        
         int [] getDataArr = getData(args);
-        System.out.println(getDataArr[0] + " в степени " + getDataArr[1] + " равен = " + calc(getDataArr));
+        if (getDataArr[0] == 0 && getDataArr[1] == 0){
+            System.out.println("Не определено");
+        } else{
+            System.out.println(getDataArr[0] + " в степени " + getDataArr[1] + " равен = " + calc(getDataArr));
+        }
         double result = calc(getDataArr);
         writeData(result,getDataArr);
 
@@ -39,24 +43,24 @@ public class lesson2 {
         String str2 = simpleArray[1];
         String[] arrtemp2 = str2.split(" = ");
 
-        String a1 = null;
-        String b1 = null;
+        String atemp = null;
+        String btemp = null;
 
         
         boolean express = Arrays.asList(arrtemp1).contains("a");
         if (express == true) {
-            a1 = arrtemp1[1];
-            b1 = arrtemp2[1];
+            atemp = arrtemp1[1];
+            btemp = arrtemp2[1];
         } else {
-            b1 = arrtemp1[1];
-            a1 = arrtemp2[1];
+            btemp = arrtemp1[1];
+            atemp = arrtemp2[1];
         }
 
-        System.out.println("a = " + a1);
-        System.out.println("b = " + b1);
+        System.out.println("a = " + atemp);
+        System.out.println("b = " + btemp);
 
-        int a = Integer.parseInt(a1);
-        int b = Integer.parseInt(b1);
+        int a = Integer.parseInt(atemp);
+        int b = Integer.parseInt(btemp);
         finalarr[0] = a;
         finalarr[1] = b;
 
@@ -73,8 +77,14 @@ public class lesson2 {
         
         try (final FileWriter writer = new FileWriter("file.txt", false)) {
             final String s = Double.toString(data);
-            writer.write(arr[0] + " в степени " + arr[1] + " равен = " + s);
-            writer.write(System.lineSeparator());
+            if (arr[0] == 0 && arr[1] == 0){
+                writer.write("Не определено");
+                writer.write(System.lineSeparator());
+            }else{
+                writer.write(arr[0] + " в степени " + arr[1] + " равен = " + s);
+                writer.write(System.lineSeparator());
+            }
+;
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
