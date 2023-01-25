@@ -42,21 +42,27 @@ public class lesson2 {
         System.out.println(Arrays.toString(arrtemp2));
 
 
-        String z1 = null;
-        String z2 = null;
+        String a1 = null;
+        String b1 = null;
 
         for (int i = 0; i < arrtemp2.length; i++) {   
             if (arrtemp1[0] == "a") {
-                z1 = arrtemp1[1];
-                z2 = arrtemp2[1];
+                a1 = arrtemp2[1];
+                b1 = arrtemp1[1];
             } else {
-                z1 = arrtemp2[1];
-                z2 = arrtemp1[1];
+                a1 = arrtemp1[1];
+                b1 = arrtemp2[1];
             }
             // System.out.println(z1);
         }
-        System.out.println(z1);
-        System.out.println(z2);
+        double a2 = Double.parseDouble(a1);
+        double b2 = Double.parseDouble(b1);
+
+        System.out.println(a1);
+        System.out.println(b1);
+        System.out.println(a2);
+        System.out.println(b2);
+        System.out.println(a2 + b2);
 
         // String path = "Input.txt";
         // File file = new File(path);
