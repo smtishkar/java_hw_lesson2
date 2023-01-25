@@ -29,17 +29,17 @@ public class lesson2 {
 
         String str1 = simpleArray[0];
         String[] arrtemp1 = str1.split(" = ");
-        for (String ss1 : arrtemp1) {
+        // for (String ss1 : arrtemp1) {
             // System.out.println(ss1);
-        }
+        // }
 
         String str2 = simpleArray[1];
         String[] arrtemp2 = str2.split(" = ");
-        for (String ss2 : arrtemp2) {
+        // for (String ss2 : arrtemp2) {
             // System.out.println(ss2);
-        }
-        System.out.println(Arrays.toString(arrtemp1));
-        System.out.println(Arrays.toString(arrtemp2));
+        // }
+        // System.out.println(Arrays.toString(arrtemp1));
+        // System.out.println(Arrays.toString(arrtemp2));
 
 
         String a1 = null;
@@ -53,30 +53,17 @@ public class lesson2 {
                 a1 = arrtemp1[1];
                 b1 = arrtemp2[1];
             }
-            // System.out.println(z1);
         }
-        double a2 = Double.parseDouble(a1);
-        double b2 = Double.parseDouble(b1);
+        double a = Double.parseDouble(a1);
+        double b = Double.parseDouble(b1);
 
-        System.out.println(a1);
-        System.out.println(b1);
-        System.out.println(a2);
-        System.out.println(b2);
-        System.out.println(a2 + b2);
+        // System.out.println(a1);
+        // System.out.println(b1);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
 
-        // String path = "Input.txt";
-        // File file = new File(path);
-        // Scanner scanner = new Scanner(file);
-        // while (scanner.hasNextLine()){
-        // System.out.println(scanner.nextLine());
-        // }
-        // scanner.close();
-
-        double a = 2;
-        double b = 3;
-        System.out.println(calc(a, b));
+        System.out.println(a + " в степени " + b + " равен - " + calc(a, b));
         double c = calc(a, b);
-        // System.out.println(c);
 
         try (final FileWriter writer = new FileWriter("file.txt", false)) {
             final String s = Double.toString(c);
